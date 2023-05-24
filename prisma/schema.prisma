@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id_user  String @id @default(uuid())
+  username String
+  email    String @unique
+  no_hp    String
+  password String
+}
+
+model Pengguna {
+  id_pengguna       Int      @id @default(autoincrement())
+  kode_invoice      String
+  name_pengguna     String
+  no_hp             String
+  alamat            String
+  tgl_konsul        DateTime @default(now())
+  id_penyakit       String
+  gejala            String
+  total_perhitungan Float
+}
+
+model Penyakit {
+  id_penyakit   Int         @id @default(autoincrement())
+  kode_penyakit String      @unique
+  nama_penyakit String
+  Solusi        String      @db.Text
+  Rule_base     Rule_base[]
+}
+
+model Gejala {
+  id_Gejala   Int         @id @default(autoincrement())
+  kode_Gejala String      @unique
+  nama_Gejala String
+  nilai_ds    Float
+  Rule_base   Rule_base[]
+}
+
+model Rule_base {
+  id_rules   Int      @id @default(autoincrement())
+  penyakit   Penyakit @relation(fields: [penyakitId], references: [id_penyakit], onDelete: Cascade)
+  penyakitId Int
+  gejala     Gejala   @relation(fields: [GejalaId], references: [id_Gejala], onDelete: Cascade)
+  GejalaId   Int
+
+  @@unique([penyakitId, GejalaId])
+}
