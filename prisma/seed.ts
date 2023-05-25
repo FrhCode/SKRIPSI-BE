@@ -396,6 +396,46 @@ async function main() {
         GejalaId: KG14.id_Gejala,
         penyakitId: P6.id_penyakit,
       },
+      {
+        GejalaId: KG15.id_Gejala,
+        penyakitId: P7.id_penyakit,
+      },
+      {
+        GejalaId: KG16.id_Gejala,
+        penyakitId: P7.id_penyakit,
+      },
+      {
+        GejalaId: KG17.id_Gejala,
+        penyakitId: P8.id_penyakit,
+      },
+      {
+        GejalaId: KG18.id_Gejala,
+        penyakitId: P8.id_penyakit,
+      },
+      {
+        GejalaId: KG19.id_Gejala,
+        penyakitId: P8.id_penyakit,
+      },
+      {
+        GejalaId: KG19.id_Gejala,
+        penyakitId: P9.id_penyakit,
+      },
+      {
+        GejalaId: KG19.id_Gejala,
+        penyakitId: P10.id_penyakit,
+      },
+      {
+        GejalaId: KG20.id_Gejala,
+        penyakitId: P10.id_penyakit,
+      },
+      {
+        GejalaId: KG21.id_Gejala,
+        penyakitId: P11.id_penyakit,
+      },
+      {
+        GejalaId: KG22.id_Gejala,
+        penyakitId: P11.id_penyakit,
+      },
     ],
   });
 }
